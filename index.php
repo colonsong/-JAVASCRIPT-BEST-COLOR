@@ -48,7 +48,8 @@
                                         <input type="text" class="form-control" id="hex_in"  value="AABBCC">
                                     </div>
                                 </div>
-                                <button type="submit" class="btn " onclick="change_color();">幫你調字體顏色</button>
+                                <button type="submit" class="btn " onclick="change_color();">試試看</button>
+                                <button type="submit" class="btn " onclick="random_color();">亂數一下</button>
 
                             <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
                     </div>
@@ -127,6 +128,19 @@
                                       var bg_color = get_color_brghtdiff();
                                       console.log("bg_color : " + bg_color);
                                       $('*').css('color', 'rgb(' + bg_color[0] + ', ' + bg_color[1] + ', ' + bg_color[2] + ')');
+                                    }
+                                    function random_color()
+                                    {
+                                      var color_random = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+                                      var hex_num = 6;
+                                      var hex_str = '';
+                                      do{
+                                        hex_str +=   color_random[Math.floor((Math.random() * (15) + 0))];
+                                      }while(hex_num-- > 1)
+                                      console.log('亂數hex_string: ' + hex_str);
+                                      $('#hex_in').val(hex_str);
+                                      change_color();
+
                                     }
                                     function hex_torgb()
                                     {
