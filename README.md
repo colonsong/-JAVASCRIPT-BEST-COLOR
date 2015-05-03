@@ -11,6 +11,7 @@
 
 ### Prerequisites
 xampp
+boostrap
 
 ### 運作圖片
 ![Image text](https://github.com/colonsong/images/blob/master/bestcolor.png?raw=true)
