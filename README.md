@@ -1,5 +1,6 @@
 # -JAVASCRIPT-BEST-COLOR
 ##給我一個顏色，我給你一個最適合觀看的顏色對比
+#####Give me a color I'll give you a perfect color
 
 這個世界需要更完美的顏色
 -------------
