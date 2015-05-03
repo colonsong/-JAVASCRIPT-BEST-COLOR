@@ -120,14 +120,15 @@
                                       //trans and set rgb
                                       hex_torgb();
                                       //set css
-                                      $('#r1').css('color', 'rgb(' + $R1 + ', 0, 0)');
-                                      $('#g1').css('color', 'rgb(0, ' + $G1 + ', 0)');
-                                      $('#b1').css('color', 'rgb(0 , 0, ' + $B1 + ')');
+
                                       $('body').css('background-color', 'rgb(' + $R1 + ' , ' + $G1 + ', ' + $B1 + ')');
                                       //get font color
                                       var bg_color = get_color_brghtdiff();
                                       console.log("bg_color : " + bg_color);
                                       $('*').css('color', 'rgb(' + bg_color[0] + ', ' + bg_color[1] + ', ' + bg_color[2] + ')');
+                                      $('#r1').css('color', 'rgb(' + $R1 + ', 0, 0)');
+                                      $('#g1').css('color', 'rgb(0, ' + $G1 + ', 0)');
+                                      $('#b1').css('color', 'rgb(0 , 0, ' + $B1 + ')');
                                     }
                                     function random_color()
                                     {
