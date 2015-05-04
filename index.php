@@ -50,8 +50,12 @@
                                 </div>
                                 <button type="submit" class="btn " onclick="change_color();">試試看</button>
                                 <button type="submit" class="btn " onclick="random_color();">亂數一下</button>
-
+<p/>
                             <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+                            <dl class="lead">
+  <dt>亮度差異值 > 125</dt>
+  <dd>顏色差一值取20次最大值，理想值500以上</dd>
+</dl>
                     </div>
                     <div class="mastfoot">
                         <div class="inner">
