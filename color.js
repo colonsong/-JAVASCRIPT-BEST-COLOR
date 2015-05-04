@@ -34,20 +34,34 @@ function set_color_brghtdiff() {
 	 假設 g2 b2 = 0
 	 br2_range = 299 * r2 / 1000
 	 R2最大值Range 為 (br2_range * 1000 / 299)
+   10*1000 = (299*比例*x + 587*比例＊x + *比例*x)
+   10000 = x(299*比例 ＋587*比例 ＋ 114＊比例)
+
 	 **/
-  var total_range = (br2_range * 1000) / (299+587+114);
+  var total_range = br2_range ;
 
-  console.log('total_range:' + total_range);
-  r2 = parseInt(Math.floor((Math.random() * total_range) + 0));
-  total_range = total_range - r2;
-  console.log('total_range r2:' + r2);
+  console.log('total_range:' + total_range );
+  var r2bi = parseInt(Math.floor((Math.random() * br2_range) + 0));
+  console.log('r2bi:' + r2bi);
+  br2_range = br2_range - r2bi;
 
-  g2 = parseInt(Math.floor((Math.random() * total_range) + 0));
-  total_range = total_range - g2;
-  console.log('total_range g2:' + g2);
-  b2 = total_range;
+  var g2bi = parseInt(Math.floor((Math.random() * br2_range) + 0));
+  console.log('g2bi:' + g2bi);
 
+  br2_range = br2_range - g2bi;
+
+  var b2bi = br2_range;
+  console.log('b2bi:' + b2bi);
+
+  var x = total_range * 1000 / (299*r2bi + 587*g2bi + 114*b2bi);
+
+  r2 = parseInt(r2bi * x);
+  g2 = parseInt(g2bi * x);
+  b2 = parseInt(b2bi * x);
+
+  console.log('比例 x:' + x);
   console.log('total_range b2:' + b2);
+  console.log('@total_range :' + (299 * r2 + 587 * g2 + 114 * b2)/1000)
   console.log("r2: " + r2 + " g2: " + g2 + " b2: " + b2);
   console.log("br2_range:" + (299 * r2 + 587 * g2 + 114 * b2) / 1000);
 
