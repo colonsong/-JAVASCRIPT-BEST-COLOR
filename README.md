@@ -21,11 +21,9 @@
 #### 運作影片
 <a href="https://www.youtube.com/embed/573QnZfq-14" target="_blank"><img src="http://i.ytimg.com/vi/573QnZfq-14/0.jpg"
  width="640" height="580" border="10" /></a>
- 
+
 ####demo
+http://waterdrop.tw/demo/JAVASCRIPT_BEST_COLOR/
 
 ### Tested Environment
 windows7 64bit
-
-
-
