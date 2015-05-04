@@ -18,7 +18,8 @@
 ### 運作圖片
 ![Image text](https://github.com/colonsong/images/blob/master/bestcolor.png?raw=true)
 
-!![420x315](//www.youtube.com/embed/573QnZfq-14)
+<a href="https://www.youtube.com/embed/573QnZfq-14" target="_blank"><img src="http://i.ytimg.com/vi/573QnZfq-14/0.jpg"
+ width="240" height="180" border="10" /></a>
 
 ### Tested Environment
 windows7 64bit
