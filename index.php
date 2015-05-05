@@ -58,6 +58,7 @@
                               <dt>字體色碼<span id="font_hex"> </span> </dt>
   <dt><span id="bright_diff">@@@</span> 亮度差異值 理想 > 125 <span class="ok bright_ok"></span></dt>
   <dd><span id="color_diff">@@@</span> 顏色差 理想 > 500 <span class="ok color_ok"></span></dd>
+  <dd><span id="pythdiff_diff">@@@</span> pythdiff 理想 > 250 <span class="ok phthdiff_ok"></span></dd>
 </dl>
                     </div>
                     <div class="mastfoot">

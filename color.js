@@ -3,8 +3,14 @@ var g1;
 var b1;
 var r2, g2, b2 ,r2h,g2h,b2h;
 var ok = '<span class="glyphicon glyphicon-ok"></span>';
+var color_random = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A',
+  'B', 'C', 'D', 'E', 'F'
+];
 
-
+function reset_ok()
+{
+  $('.ok').html('');
+}
 function set_color_brghtdiff() {
   //18.15
   var br1 = (299 * r1 + 587 * g1 + 114 * b1) / 1000;
@@ -19,7 +25,12 @@ function set_color_brghtdiff() {
   }
   if(brightdiff >= 125)
   {
+    console.log('@@@@@@@@@@@' + brightdiff);
     $('.bright_ok').html(ok);
+  }
+  else
+  {
+    $('.bright_ok').html('');
   }
   $('#bright_diff').text(brightdiff);
 
@@ -72,11 +83,13 @@ if(r2 > 255 || g2 > 255 || b2 > 255)
 
 }
 $(document).ready(function() {
+
   change_color();
 });
 
 
 function change_color() {
+  reset_ok();
   //trans and set rgb
 
     hex_torgb();
@@ -92,6 +105,7 @@ function change_color() {
   //get font color
   set_color_brghtdiff();
   colordiff();
+  pythdiff()
 
 
 
@@ -100,9 +114,8 @@ function change_color() {
 }
 
 function random_color() {
-  var color_random = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A',
-    'B', 'C', 'D', 'E', 'F'
-  ];
+  reset_ok();
+
   var hex_num = 6;
   var hex_str = '';
   do {
@@ -112,6 +125,7 @@ function random_color() {
   $('#hex_in').val(hex_str);
   change_color();
   colordiff();
+  pythdiff()
 
 
 }
@@ -134,7 +148,14 @@ function hex_torgb() {
 
 }
 
-
+function pythdiff()
+{
+  var rd = r1-r2;
+  var gd = g1-g2;
+  var bd = b1-b2;
+  var pythdiff = parseInt(Math.sqrt(rd*rd + gd*gd + bd*bd));
+  $('#pythdiff_diff').text(pythdiff);
+}
 
 /**
 //簡單說就是顏色相減差加起來要> 500
