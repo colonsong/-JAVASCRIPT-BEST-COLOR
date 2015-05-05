@@ -164,7 +164,7 @@ var try_num;
 var best_colordiff_num;
 var best_colordiff;
 function colordiff() {
-  try_num = 20;
+  try_num = 10;
   best_colordiff_num = 0;
   best_colordiff = [];
 

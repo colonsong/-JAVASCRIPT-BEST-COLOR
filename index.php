@@ -37,9 +37,9 @@
                     </div>
                     <div class="inner cover">
                         <h1 class="cover-heading">
-                            <span id="r1">R1</span>
-                            <span id="g1">G1</span>
-                            <span id="b1">B1</span>
+                            <span id="r1">R</span>
+                            <span id="g1">G</span>
+                            <span id="b1">B</span>
 
                                 <div class="form-group">
                                     <label class="sr-only" for="exampleinputAmount">Amount (in dollars)</label>
@@ -48,8 +48,10 @@
                                         <input type="text" class="form-control" id="hex_in"  value="AABBCC">
                                     </div>
                                 </div>
-                                <button type="submit" class="btn " onclick="change_color();">試試看</button>
-                                <button type="submit" class="btn " onclick="random_color();">亂數一下</button>
+                                <button type="submit" class="btn btn-primary" onclick="change_color();">試試看</button>
+                                <button type="submit" class="btn btn-primary" onclick="random_color();">亂數一下</button>
+                                <button type="submit" class="btn btn-danger" onclick="save();"><span class="glyphicon glyphicon-heart-empty"></span></button>
+
 <p/>
                             <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
                             <dl class="lead">
