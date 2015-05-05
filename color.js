@@ -2,6 +2,7 @@ var r1;
 var g1;
 var b1;
 var r2, g2, b2 ,r2h,g2h,b2h;
+var ok = '<span class="glyphicon glyphicon-ok"></span>';
 
 
 function set_color_brghtdiff() {
@@ -15,6 +16,10 @@ function set_color_brghtdiff() {
   if (brightdiff < 100) {
     console.log("亮度不足："+brightdiff);
     return set_color_brghtdiff();
+  }
+  if(brightdiff >= 125)
+  {
+    $('.bright_ok').html(ok);
   }
   $('#bright_diff').text(brightdiff);
 
@@ -144,7 +149,7 @@ function colordiff() {
   r2h = '';
   b2h  = '';
   g2h = '';
-  try_num = 10;
+  try_num = 5;
   best_colordiff_num = 0;
   best_colordiff = [];
 
@@ -200,8 +205,12 @@ function colordiff() {
 
   $('#font_hex').text(r2h +"" + g2h + b2h);
 
-
+  if(best_colordiff_num >= 500)
+  {
+    $('.color_ok').html(ok);
+  }
   $('#color_diff').text(best_colordiff_num);
+
   console.log('最大值：' + best_colordiff_num + '顏色： r1: ' + r1 + ' g1: ' + g1 + ' b1: ' + b1 + ' r2: ' + r2 +
     ' g2: ' + g2 + ' b2: ' + b2);
 

@@ -40,7 +40,7 @@
                             <span id="r1">R</span>
                             <span id="g1">G</span>
                             <span id="b1">B</span>
-
+                            <p/>
                                 <div class="form-group">
                                     <label class="sr-only" for="exampleinputAmount">Amount (in dollars)</label>
                                     <div class="input-group">
@@ -48,16 +48,16 @@
                                         <input type="text" class="form-control" id="hex_in"  value="AABBCC">
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary" onclick="change_color();">試試看</button>
-                                <button type="submit" class="btn btn-primary" onclick="random_color();">亂數一下</button>
+                                <button type="submit" class="btn btn-primary" onclick="change_color();">字體顏色</button>
+                                <button type="submit" class="btn btn-primary" onclick="random_color();">字體與背景</button>
                                 <button type="submit" class="btn btn-danger" onclick="save();"><span class="glyphicon glyphicon-heart-empty"></span></button>
 
 <p/>
                             <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
                             <dl class="lead">
                               <dt>字體色碼<span id="font_hex"> </span> </dt>
-  <dt><span id="bright_diff">@@@</span> 亮度差異值 理想 > 125 </dt>
-  <dd><span id="color_diff">@@@</span> 顏色差 理想 > 500</dd>
+  <dt><span id="bright_diff">@@@</span> 亮度差異值 理想 > 125 <span class="ok bright_ok"></span></dt>
+  <dd><span id="color_diff">@@@</span> 顏色差 理想 > 500 <span class="ok color_ok"></span></dd>
 </dl>
                     </div>
                     <div class="mastfoot">
