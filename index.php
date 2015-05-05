@@ -55,8 +55,9 @@
 <p/>
                             <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
                             <dl class="lead">
-  <dt>亮度差異值 > 125</dt>
-  <dd>顏色差一值取20次最大值，理想值500以上</dd>
+                              <dt>字體色碼<span id="font_hex"> </span> </dt>
+  <dt><span id="bright_diff">@@@</span> 亮度差異值 理想 > 125 </dt>
+  <dd><span id="color_diff">@@@</span> 顏色差 理想 > 500</dd>
 </dl>
                     </div>
                     <div class="mastfoot">

@@ -1,7 +1,7 @@
 var r1;
 var g1;
 var b1;
-var r2, g2, b2;
+var r2, g2, b2 ,r2h,g2h,b2h;
 
 
 function set_color_brghtdiff() {
@@ -12,55 +12,54 @@ function set_color_brghtdiff() {
   // math abs($BR1 - $BR2) < 125
   // -125 < ($BR1-$BR2) < 125
   var brightdiff = parseInt(Math.abs(br1 - br2_range));
-  if (brightdiff < 125) {
+  if (brightdiff < 100) {
     console.log("亮度不足："+brightdiff);
     return set_color_brghtdiff();
   }
+  $('#bright_diff').text(brightdiff);
 
   console.log("亮度相異度: " + brightdiff);
   //random r2 startㄍ
   //$BR2 = (299 * $R2 + 587 * $G2 + 114 * $B2) / 1000;
-  //if br2 = 10
   /**
   10 = (299 * $R2 + 587 * $G2 + 114 * $B2) / 1000;
-  10 * 1000 = (299 * $R2 + 587 * $G2 + 114 * $B2)
-  假設R2 G2 B2 都為同一個變數ｘ
-  10000 = x*299 + x*587 + 114*x
-  10000 = x(299+587+114)
-  x = 10*000/(299+587+114)
-  x = br2_range * 1000 / (299+587+114)
-  總共的ｒａｎｇｅ就是3X
 
-	 假設 g2 b2 = 0
-	 br2_range = 299 * r2 / 1000
-	 R2最大值Range 為 (br2_range * 1000 / 299)
    10*1000 = (299*比例*x + 587*比例＊x + *比例*x)
    10000 = x(299*比例 ＋587*比例 ＋ 114＊比例)
 
 	 **/
   var total_range = br2_range ;
-
   console.log('total_range:' + total_range );
-  var r2bi = parseInt(Math.floor((Math.random() * br2_range) + 0));
+
+  var g2bi = Math.floor((Math.random() * br2_range) + 0);
+  console.log('g2bi:' + g2bi);
+  br2_range = br2_range - g2bi;
+
+  var r2bi = Math.floor((Math.random() * br2_range) + 0);
   console.log('r2bi:' + r2bi);
   br2_range = br2_range - r2bi;
 
-  var g2bi = parseInt(Math.floor((Math.random() * br2_range) + 0));
-  console.log('g2bi:' + g2bi);
 
-  br2_range = br2_range - g2bi;
+
+
+
+
+
+
 
   var b2bi = br2_range;
   console.log('b2bi:' + b2bi);
 
-  var x = total_range * 1000 / (299*r2bi + 587*g2bi + 114*b2bi);
+  //r2bi*1000 = 299*r2
+  r2 = parseInt(r2bi * 1000 /299);
 
-  r2 = parseInt(r2bi * x);
-  g2 = parseInt(g2bi * x);
-  b2 = parseInt(b2bi * x);
+  g2 = parseInt(g2bi * 1000 /587);
+  b2 = parseInt(b2bi * 1000 /114);
+if(r2 > 255 || g2 > 255 || b2 > 255)
+{
+  set_color_brghtdiff();
+}
 
-  console.log('比例 x:' + x);
-  console.log('total_range b2:' + b2);
   console.log('@total_range :' + (299 * r2 + 587 * g2 + 114 * b2)/1000)
   console.log("r2: " + r2 + " g2: " + g2 + " b2: " + b2);
   console.log("br2_range:" + (299 * r2 + 587 * g2 + 114 * b2) / 1000);
@@ -116,12 +115,12 @@ function hex_torgb() {
   var input = $('#hex_in').val();
 
   input = input.toUpperCase();
-  var a = getdec(input.substring(0, 1));
-  var b = getdec(input.substring(1, 2));
-  var c = getdec(input.substring(2, 3));
-  var d = getdec(input.substring(3, 4));
-  var e = getdec(input.substring(4, 5));
-  var f = getdec(input.substring(5, 6));
+  var a = parseInt(input.substring(0, 1), 16);
+  var b = parseInt(input.substring(1, 2), 16);
+  var c = parseInt(input.substring(2, 3), 16);
+  var d = parseInt(input.substring(3, 4), 16);
+  var e = parseInt(input.substring(4, 5), 16);
+  var f = parseInt(input.substring(5, 6), 16);
   //set rgb val
   r1 = (a * 16) + b;
   g1 = (c * 16) + d;
@@ -130,29 +129,7 @@ function hex_torgb() {
 
 }
 
-function getdec(hex) {
-  var value;
-  if (hex == "A")
-    value = 10;
-  else
-  if (hex == "B")
-    value = 11;
-  else
-  if (hex == "C")
-    value = 12;
-  else
-  if (hex == "D")
-    value = 13;
-  else
-  if (hex == "E")
-    value = 14;
-  else
-  if (hex == "F")
-    value = 15;
-  else
-    value = eval(hex)
-  return value;
-}
+
 
 /**
 //簡單說就是顏色相減差加起來要> 500
@@ -164,6 +141,9 @@ var try_num;
 var best_colordiff_num;
 var best_colordiff;
 function colordiff() {
+  r2h = '';
+  b2h  = '';
+  g2h = '';
   try_num = 10;
   best_colordiff_num = 0;
   best_colordiff = [];
@@ -199,7 +179,29 @@ function colordiff() {
   r2 = best_colordiff[3];
   g2 = best_colordiff[4];
   b2 = best_colordiff[5];
+  console.log('@@@@@@ ' + r2 +" "+ g2 +" "+ b2);
 
+  r2h  = r2.toString(16);
+  if(r2h.length == 1)
+  {
+    r2h = '0'+r2h;
+  }
+  g2h  = g2.toString(16);
+  if(g2h.length == 1)
+  {
+    g2h = '0'+g2h;
+  }
+  b2h = b2.toString(16);
+  if(b2h.length == 1)
+  {
+    b2h = '0'+b2h;
+  }
+  console.log('@@@@@' + r2h +""+ g2h +""+ b2h);
+
+  $('#font_hex').text(r2h +"" + g2h + b2h);
+
+
+  $('#color_diff').text(best_colordiff_num);
   console.log('最大值：' + best_colordiff_num + '顏色： r1: ' + r1 + ' g1: ' + g1 + ' b1: ' + b1 + ' r2: ' + r2 +
     ' g2: ' + g2 + ' b2: ' + b2);
 
