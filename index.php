@@ -54,11 +54,13 @@
 
 <p/>
                             <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-                            <dl class="lead">
-                              <dt>字體色碼<span id="font_hex"> </span> </dt>
-  <dt><span id="bright_diff">@@@</span> 亮度差異值 理想 > 125 <span class="ok bright_ok"></span></dt>
-  <dd><span id="color_diff">@@@</span> 顏色差 理想 > 500 <span class="ok color_ok"></span></dd>
-  <dd><span id="pythdiff_diff">@@@</span> pythdiff 理想 > 250 <span class="ok phthdiff_ok"></span></dd>
+
+                            <dl class="lead" >
+                              <dt class="row">字體色碼<span id="font_hex"> </span> </dt>
+  <dt class="row"><span id="bright_diff" class="col-md-1">@@@</span><span class="col-md-5"> 亮度差異值 理想 > 125 </span><span class="ok bright_ok col-md-1"></span></dt>
+  <dd class="row"><span id="color_diff" class="col-md-1">@@@</span><span class="col-md-5">  顏色差 理想 > 500</span> <span class="ok color_ok col-md-1"></span></dd>
+  <dd class="row"><span id="pythdiff_diff" class="col-md-1">@@@</span> <span class="col-md-5"> pythdiff 理想 > 250 </span><span class="ok phthdiff_ok col-md-1"></span></dd>
+  <dd class="row"><span id="lumi_diff" class="col-md-1">@@@</span><span class="col-md-5">  lumidiff 理想 > 5 </span><span class="ok lumi_ok col-md-1"></span></dd>
 </dl>
                     </div>
                     <div class="mastfoot">

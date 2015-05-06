@@ -105,7 +105,8 @@ function change_color() {
   //get font color
   set_color_brghtdiff();
   colordiff();
-  pythdiff()
+  pythdiff();
+  check_lumdiff();
 
 
 
@@ -125,7 +126,8 @@ function random_color() {
   $('#hex_in').val(hex_str);
   change_color();
   colordiff();
-  pythdiff()
+  pythdiff();
+  check_lumdiff();
 
 
 }
@@ -155,6 +157,14 @@ function pythdiff()
   var bd = b1-b2;
   var pythdiff = parseInt(Math.sqrt(rd*rd + gd*gd + bd*bd));
   $('#pythdiff_diff').text(pythdiff);
+  if(pythdiff > 250)
+  {
+    $('.phthdiff_ok').html(ok);
+  }
+  else
+  {
+    $('.phthdiff_ok').html('');
+  }
 }
 
 /**
@@ -235,4 +245,33 @@ function colordiff() {
   console.log('最大值：' + best_colordiff_num + '顏色： r1: ' + r1 + ' g1: ' + g1 + ' b1: ' + b1 + ' r2: ' + r2 +
     ' g2: ' + g2 + ' b2: ' + b2);
 
+}
+function check_lumdiff()
+{
+  var lumi = parseInt(lumdiff());
+  $('#lumi_diff').text(lumi);
+
+  if(lumi >= 5)
+  {
+    $('.lumi_ok').html(ok);
+  }
+  else
+  {
+    $('.lumi_ok').html('');
+  }
+}
+function lumdiff(){
+    var l1 = 0.2126 * Math.pow(r1/255, 2.2) +
+          0.7152 * Math.pow(g1/255, 2.2) +
+          0.0722 * Math.pow(b1/255, 2.2);
+
+    var l2 = 0.2126 * Math.pow(r2/255, 2.2) +
+          0.7152 * Math.pow(g2/255, 2.2) +
+          0.0722 * Math.pow(b2/255, 2.2);
+
+    if(l1 > l2){
+        return (l1+0.05) / (l2+0.05);
+    }else{
+        return (l2+0.05) / (l1+0.05);
+    }
 }
